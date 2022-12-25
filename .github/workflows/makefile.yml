@@ -46,3 +46,10 @@ jobs:
       
     - name: After configuration is done, run make to compile the program
       run: make
+
+    - uses: actions/download-artifact@v3
+      with:
+       name: my-artifact
+    
+    - name: Display structure of downloaded files
+      run: ls -R
