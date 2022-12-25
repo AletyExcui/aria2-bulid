@@ -14,9 +14,15 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
-    - name: ku
-      run: sudo add-apt-repository main sudo add-apt-repository universe sudo add-apt-repository restricted sudo add-apt-repository multiverse  
-
+    - name: ku1
+      run: sudo add-apt-repository
+    - name: ku2
+      run: sudo add-apt-repository universe
+    - name: ku3   
+      run: sudo add-apt-repository restricted
+    - name: ku4
+      run: sudo add-apt-repository multiverse  
+    
     - name: apt update
       run: sudo apt update
       
