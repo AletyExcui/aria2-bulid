@@ -15,7 +15,7 @@ jobs:
     - uses: actions/checkout@v3
     
     - name: ku1
-      run: sudo add-apt-repository
+      run: sudo add-apt-repository main
     - name: ku2
       run: sudo add-apt-repository universe
     - name: ku3   
