@@ -14,6 +14,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
+    - name: apt update
+      run: apt update
+
     - name: In order to build aria2 from the source package, you need following development packages (package name may vary depending on the distribution you use)
       run: apt install libgnutls-dev nettle-de libgmp-dev libssh2-1-dev libc-ares-dev libxml2-dev zlib1g-dev libsqlite3-dev pkg-config -y
       
