@@ -1,0 +1,33 @@
+name: Makefile CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: In order to build aria2 from the source package, you need following development packages (package name may vary depending on the distribution you use):
+      run: apt install libgnutls-dev nettle-de libgmp-dev libssh2-1-dev libc-ares-dev libxml2-dev zlib1g-dev libsqlite3-dev pkg-config -y
+      
+    - name: If you downloaded source code from git repository, you have to install following packages to get autoconf macros:
+      run: apt install libxml2-dev libcppunit-dev autoconf automake autotools-dev autopoint libtool -y
+
+    - name: And run following command to generate configure script and other files necessary to build the program:
+      run: autoreconf -i
+
+    - name: The quickest way to build aria2 is first run configure script:
+      run: ./configure ARIA2_STATIC=yes
+
+    - name: To build statically linked aria2, use ARIA2_STATIC=yes command-line option:
+      run: ./configure
+      
+    - name: After configuration is done, run make to compile the program:
+      run: make
