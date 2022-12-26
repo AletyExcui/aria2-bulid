@@ -51,12 +51,12 @@ jobs:
       run: ./configure
       
     - name: After configuration is done, run make to compile the program
-      run: make -j8
+      run: make -j4
       
     - name: Create a distribution tar file for this program
-      run: make dist
+      run: make install
       
-    - uses: actions/upload-artifact@v3
-      with:
-       name: my-artifact
-       path: /home/runner/work/aria2-bulid/aria2-bulid
+    #- uses: actions/upload-artifact@v3
+    #  with:
+     #  name: my-artifact
+     #  path: /home/runner/work/aria2-bulid/aria2-bulid
