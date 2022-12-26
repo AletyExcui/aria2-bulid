@@ -47,6 +47,9 @@ jobs:
 #    - name: After configuration is done, run make to compile the program
 #      run: make -j4
 
+    - name: ku5
+      run: sudo apt-get install build-essential fakeroot dpkg-dev
+
     - name: build
       run: dpkg-buildpackage -rfakeroot -b
       
