@@ -48,7 +48,7 @@ jobs:
       run: make -j4
       
     - name: b
-      run: make -s -n install -o all DESTDIR=/home/runner/work/aria2-bulid/aria2-bulid/ \
+      run: make DESTDIR=/home/runner/work/aria2-bulid/aria2-bulid/ \
 
 #    - name: ku5
 #      run: sudo apt-get install build-essential fakeroot dpkg-dev
