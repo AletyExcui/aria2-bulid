@@ -47,16 +47,13 @@ jobs:
     - name: The quickest way to build aria2 is first run configure script
       run: ./configure ARIA2_STATIC=yes
 
-    - name: To build statically linked aria2, use ARIA2_STATIC=yes command-line option
-      run: ./configure
+#    - name: To build statically linked aria2, use ARIA2_STATIC=yes command-line option
+#      run: ./configure
       
     - name: After configuration is done, run make to compile the program
       run: make -j4
       
-    - name: Create a distribution tar file for this program
-      run: make install
-      
-    #- uses: actions/upload-artifact@v3
-    #  with:
-     #  name: my-artifact
-     #  path: /home/runner/work/aria2-bulid/aria2-bulid
+#    - uses: actions/upload-artifact@v3
+#      with:
+#       name: my-artifact
+#       path: /home/runner/work/aria2-bulid/aria2-bulid
