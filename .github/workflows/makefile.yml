@@ -28,12 +28,6 @@ jobs:
       
     - name: apt list --upgradable
       run: sudo apt list --upgradable
-      
-    - name: Creat File
-      run: sudo mkdir /aria2
-      
-    - name: Open file
-      run: cd /aria2
 
     - name: In order to build aria2 from the source package, you need following development packages (package name may vary depending on the distribution you use)
       run: sudo apt install libssl-dev libssh2-1-dev libc-ares-dev libxml2-dev zlib1g-dev libsqlite3-dev pkg-config -y
@@ -53,13 +47,10 @@ jobs:
     - name: After configuration is done, run make to compile the program
       run: make -j4
       
-    - name: Build
-      run: make build
-      
 #    - name: install
 #      run: make install  
       
-#    - uses: actions/upload-artifact@v3
-#      with:
-#       name: my-artifact
-#       path: /usr/local/bin/aria2c
+    - uses: actions/upload-artifact@v3
+      with:
+       name: my-artifact
+       path: /home/runner/work/aria2-bulid/aria2-bulid/
