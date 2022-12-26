@@ -53,10 +53,13 @@ jobs:
     - name: After configuration is done, run make to compile the program
       run: make -j4
       
+    - name: Build
+      run: make build
+      
 #    - name: install
 #      run: make install  
       
-    - uses: actions/upload-artifact@v3
-      with:
-       name: my-artifact
-       path: /usr/local/bin/aria2c
+#    - uses: actions/upload-artifact@v3
+#      with:
+#       name: my-artifact
+#       path: /usr/local/bin/aria2c
